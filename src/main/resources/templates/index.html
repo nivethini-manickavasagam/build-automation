@@ -1,0 +1,189 @@
+<html>
+	<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8">
+		<meta name="viewport"
+			content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<link rel="stylesheet" href="app/bootstrap.min.css">
+		<link rel="stylesheet" href="app/jquery.datatables.min.css"/>
+		<style>
+			.tooltip-inner {
+			    max-width: 300px !important;
+			    text-align: left;
+			}
+		</style>
+		<title>Compliance Analyzer</title>
+	</head>
+	<body>
+		<nav class="navbar navbar-dark text-center fixed-top bg-dark flex-md-nowrap p-0 shadow">
+	  		<a class="navbar-brand col-md-12 mr-0" href="#">Compliance Analyzer</a>
+		</nav>
+		<div class="pt-5"></div>
+		<div class="container-fluid center pl-5 pt-5">
+				<ul class="nav nav-tabs" style="padding-left:100px" id="myTab" role="tablist">
+				<li class="nav-item">
+				    <a class="nav-link active" id="release-tab" data-toggle="tab" href="#release" role="tab" aria-controls="release" aria-selected="false">Release Versions</a>
+				  </li>
+				  <li class="nav-item">
+				    <a class="nav-link" id="device-tab" data-toggle="tab" href="#device" role="tab" aria-controls="device" aria-selected="false">Device Compliance</a>
+				  </li>				  
+				  <li class="nav-item"> 
+				    <a class="nav-link" id="matrix-tab" data-toggle="tab" href="#matrix" role="tab" aria-controls="matrix" aria-selected="true">Security Compliance Matrix</a>
+				  </li>
+				</ul>
+				<div class="tab-content pl-5" id="myTabContent">
+					<div class="tab-pane fade text-center show pl-5 pt-5 pr-5" id="matrix" role="tabpanel" aria-labelledby="matrix-tab">
+						<h2>Security Compliance Matrix</h2>
+						<div class="">
+							<table class="table text-center table-bordered table-hover table-striped">
+								<thead>
+									<th>Software Type</th>
+									<th>Version</th>
+									<th>Security Vulnerabilities</th>
+									<th>License Risks</th>
+									<th>Operational Risks</th>
+									<th>Is Compliant</th>
+									<th>Count of Devices</th>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Gateway UI</td>
+										<td>R2.0</<td>
+										<td> <a href="#"> 10 - Critical / 18 - High </a></td>
+										<td> <a href="#"> 10 - Critical / 18 - High </a></td>
+										<td> <a href="#"> 10 - Critical / 18 - High </a></td>
+										<td> <span style='font-size:24px;'>&#10008;</span> </td>
+										<td><a href="#"> 3</a> </td>
+									</tr>
+									<tr>
+										<td>Gateway UI</td>
+										<td>R2.1</<td>
+										<td> <a target="_blank" href="http://23.96.229.205:8080/ssc/html/ssc/version/42/fix/null/?filterSet=a243b195-0a59-3f8b-1403-d55b7a7d78e6" id="GatewayUI" class="createdDiv" data-container="body" data-toggle="tooltip" data-html="true" data-placement="top">  </a> </td>
+										<td> <a href="#"> 10 - Critical / 0 - High </a></td>
+										<td> <a href="#"> 10 - Critical / 0 - High </a></td>
+										<td> <span style='font-size:24px;'>&#10008;</span> </td>
+										<td> <a href="#">0 </a></td>
+									</tr>
+									<tr>
+										<td>Gateway UI</td>
+										<td>R2.1-SecurityPatch</<td>
+										<td> <a href="#"> 0 - Critical / 0 - High </a></td>
+										<td> <a href="#"> 0 - Critical / 0 - High </a></td>
+										<td> <a href="#"> 0 - Critical / 0 - High </a></td>
+										<td> <span style='font-size:24px;'>&#10004;</span> </td>
+										<td><a href="#"> 0</a> </td>
+									</tr>
+									<tr>
+										<td>Gateway Core</td>
+										<td>R2.0</<td>
+										<td> <a href="#"> 10 - Critical / 18 - High </a> </td>
+										<td> <a href="#"> 10 - Critical / 18 - High </a></td>
+										<td> <a href="#"> 10 - Critical / 18 - High </a></td>
+										<td> <span style='font-size:24px;'>&#10008;</span> </td>
+										<td><a href="#">3 </a></td>
+									</tr>									
+									<tr>
+										<td>Gateway Core</td>
+										<td>R2.1</<td>
+										<td> <a target="_blank" href="http://23.96.229.205:8080/ssc/html/ssc/version/30/fix/null/?filterSet=a243b195-0a59-3f8b-1403-d55b7a7d78e6" id="GatewayCore" class="createdDiv" data-container="body" data-toggle="tooltip" data-html="true" data-placement="top">  </a> </td>
+										<td> <a href="#"> 10 - Critical / 0 - High </a></td>
+										<td> <a href="#"> 10 - Critical / 0 - High </a></td>
+										<td> <span style='font-size:24px;'>&#10008;</span> </td>
+										<td> <a href="#">0 </a> </td>
+									</tr>
+									<tr>
+										<td>Gateway Core</td>
+										<td>R2.1 -SecurityPatch</<td>
+										<td> <a href="#"> 0 - Critical / 0 - High </a></td>
+										<td> <a href="#"> 10 - Critical / 18 - High </a></td>
+										<td> <a href="#"> 10 - Critical / 18 - High </a></td>
+										<td> <span style='font-size:24px;'>&#10004;</span> </td>
+										<td><a href="#"> 0</a> </td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<div class="tab-pane fade text-center show pl-5 pt-5 pr-5" id="device" role="tabpanel" aria-labelledby="device-tab">
+						<h2>Device Compliance</h2>
+						<div class="">
+							<table class="table text-center table-bordered table-hover table-striped" id="deviceData">
+								<thead>
+									<th scope="col">Select</th>
+									<th scope="col">Device</th>
+									<th scope="col">Version</th>
+									<th scope="col">Is Compliant</th>
+									<th scope="col">Deployment Status</th>									
+								</thead>
+								<tbody>																
+								</tbody>
+							</table>							
+						</div>
+						<div class="row">
+								<div class="col-md-4"></div>
+								<div class="col-md-4">
+									<button type="button" class="btn btn-primary"  data-toggle="modal" data-target="#versionModal">Update</button>
+									
+									<button type="button" class="btn btn-primary" onclick="updateStatus()">Refresh Deployment Status</button>
+								</div>
+								<div class="col-md-4"></div>
+						</div>
+					</div>
+					<div class="tab-pane fade text-center active show pt-5 pr-5" id="release" role="tabpanel" aria-labelledby="release-tab">
+						<h2>Software release content management </h2>
+						<form method="POST" enctype="multipart/form-data" action="/">
+						<div class="">							
+								<table class="table text-center table-bordered table-hover table-striped" id="releaseVersion">
+									<thead>
+										<th scope="col">Title</th>
+										<th scope="col">Software Type</th>
+										<th scope="col">Classification</th>
+										<th scope="col">Release Date</th>	
+										<th scope="col">Version</th>
+										<th scope="col">Content</th>
+										<th scope="col">Uploaded to SCM</th>
+									</thead>
+									<tbody>																
+									</tbody>
+								</table>
+													
+						</div>
+						<div class="row">
+								<div class="col-md-4"></div>
+								<div class="col-md-4">
+									<button type="button" id="addVersion" class="btn btn-primary" onclick="addNewVersion()">Add a new version</button>
+									<button type="submit"  class="btn btn-primary">Save & Upload</button>
+								</div>
+								<div class="col-md-4"></div>
+						</div>
+						</form>	
+					</div>
+			</div>
+			<div class="modal fade" id="versionModal" aria-labelledby="versionModalLabel" aria-hidden="true" tabindex="-1" role="dialog">
+			  <div class="modal-dialog modal-dialog-centered" role="document">
+			    <div class="modal-content">
+			      <div class="modal-header">
+			        <h5 class="modal-title">Update devices to version:</h5>
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			          <span aria-hidden="true">&times;</span>
+			        </button>
+			      </div>
+			      <div class="modal-body">
+			      '<select name="selectedType" id="selectedType"><option value="Audio">Audio</option><option value="Core">Core</option><option value="Crypto">Crypto</option><option value="BluetoothManager">Bluetooth Manager</option><option value="Certificates">Certificates</option></select>'
+			        <select id="updateToVersion"><option value="UpdateRollout">Update Rollout</option><option value="SecurityPatch">Latest Security Patch</option></select> 
+			      </div>
+			      <div class="modal-footer">
+			        <button type="button" class="btn btn-primary" onclick="updateDevices()">Update</button>
+			        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+		</div>
+		<script type="text/javascript" src="app/jquery.min.js"></script>
+		<script type="text/javascript" src="app/jquery.datatables.min.js"></script>
+		<script type="text/javascript" src="app/popper.min.js"></script>
+		<script type="text/javascript" src="app/bootstrap.min.js"></script>
+		<script type="text/javascript" src="app/app.js"></script>
+	</body>
+</html>
