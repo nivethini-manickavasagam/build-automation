@@ -1,0 +1,25 @@
+.App {
+  text-align: center;
+}
+
+.box{
+  width: 90%;
+  display: inline-block;
+}
+.container-flex{
+  justify-content: space-between;
+  display: flex;
+}
+.dropdown{
+  flex-direction: column;
+  padding-left: 10px;
+  width: 20%;
+  text-align: left;
+}
+
+h5{
+  size: 1.2em;
+}
+.label{
+  float: right;
+}
